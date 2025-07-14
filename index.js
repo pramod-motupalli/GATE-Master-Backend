@@ -145,6 +145,10 @@ app.get('/api/attempts', authenticateToken, async (req, res) => {
     res.status(500).json({ message: 'Server error while fetching attempts.' });
   }
 });
+app.get('/uptimerobot', async (req, res) => {
+  console.log("UptimeRobot ping received");
+  res.status(200).send("OK"); // Important: always respond
+});
 
 // Start server
 const PORT = process.env.PORT || 5000;
